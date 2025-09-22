@@ -1,0 +1,2 @@
+# offBot
+simple discordjs bot
