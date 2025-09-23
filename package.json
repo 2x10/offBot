@@ -1,5 +1,5 @@
 {
-  "name": "zenex-discord-bot",
+  "name": "offbot-discord-bot",
   "version": "0.2",
   "description": "bot for discord",
   "main": "src/main.js",
@@ -10,7 +10,7 @@
     "bot",
     "minecraft"
   ],
-  "author": "zenDev",
+  "author": "2x10",
   "license": "LICENSE",
   "dependencies": {
     "discord.js": "^14.11.0"
