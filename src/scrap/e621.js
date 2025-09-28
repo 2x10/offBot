@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { ScraperContext } = require("../helperScripts/webScraper.js")
+const { ScraperContext } = require("2x10-webscraper")
 const { ScraperHelper } = require("../helperScripts/webScraperHelper.js")
 
 module.exports = 

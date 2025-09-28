@@ -1,4 +1,4 @@
-const { Scrape } = require("2x10-webscrape")
+const { Scrape } = require("2x10-webscraper")
 
 async function ScraperHelper (interaction, context, usrTags, usrAmount)
 {
