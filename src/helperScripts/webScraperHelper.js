@@ -1,4 +1,4 @@
-const { Scrape } = require("./webScraper.js")
+const { Scrape } = require("2x10-webscrape")
 
 async function ScraperHelper (interaction, context, usrTags, usrAmount)
 {
@@ -33,7 +33,7 @@ async function ScraperHelper (interaction, context, usrTags, usrAmount)
 		        await interaction.reply("❌ Something went wrong.");
 		    }
 		} 
-		catch (why) {console.log`\n==========================================\n\n${why}`}
+		catch (why) {}
 	}
 }
 

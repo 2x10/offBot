@@ -5,7 +5,7 @@
   "main": "src/main.js",
   "scripts": {
     "deploy": "node deploy-commands.js",
-    "main": "node src/main.js",
+    "dev": "node src/main.js",
     "test": "node test.js"
   },
   "keywords": [
@@ -14,11 +14,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/2x10/WebScraper.git"
+    "url": "https://github.com/2x10/webscraper.git"
   },
   "author": "2x10",
   "license": "LICENSE",
   "dependencies": {
+    "2x10-webscrape": "^1.0.9",
     "cheerio": "^1.1.2",
     "discord.js": "^14.11.0",
     "node-fetch": "^2.7.0"
