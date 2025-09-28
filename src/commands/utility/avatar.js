@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -8,7 +8,26 @@ module.exports = {
 		.setDescription('The user\'s avatar to show')),
 	async execute(interaction) {
 		const user = interaction.options.getUser('target');
-		if (user) return interaction.reply(`${user.username}'s avatar: ${user.displayAvatarURL()}`);
-		return interaction.reply(`Your avatar: ${interaction.user.displayAvatarURL()}`);
+ 
+		message = ""
+		var avatar = "";
+		if (user)
+		{
+			message = `${user.username}'s avatar`
+			avatar = user.displayAvatarURL()
+		}
+		else
+		{
+			message = `${interaction.user.username}'s avatar`
+			avatar = interaction.user.displayAvatarURL()
+		}
+		
+
+ 		const embed = new EmbedBuilder()
+ 	       .setTitle(message)
+ 	       .setImage(avatar)
+		   .setDescription("nice pfp!")
+		   .setColor(0xFF00FF)
+ 	   await interaction.reply({ embeds: [embed] });
 	},
 };

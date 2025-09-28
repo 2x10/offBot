@@ -1,4 +1,4 @@
-name: Deploy to VPS
+name: Deploy App
 
 on:
   push:
@@ -21,4 +21,17 @@ jobs:
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H voidence.cc >> ~/.ssh/known_hosts
-        rsync -avz --delete ./ dev@voidence.cc:/home/dev/bots/offbot
+        rsync -avz --delete --exclude='config.json' ./ dev@voidence.cc:/home/dev/bots/offbot/
+
+    - name: Run install script
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+      run: |
+        ssh -i ~/.ssh/id_rsa dev@voidence.cc << 'EOF'
+          set -e 
+
+          cd /home/dev/bots/offbot/
+
+          # Run the installer
+          bash ./install.sh
+        EOF

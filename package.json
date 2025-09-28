@@ -1,18 +1,26 @@
 {
-  "name": "offbot-discord-bot",
+  "name": "offbot",
   "version": "0.2",
   "description": "bot for discord",
   "main": "src/main.js",
   "scripts": {
-    "test": "node src/main.js"
+    "deploy": "node deploy-commands.js",
+    "main": "node src/main.js",
+    "test": "node test.js"
   },
   "keywords": [
     "bot",
     "minecraft"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2x10/WebScraper.git"
+  },
   "author": "2x10",
   "license": "LICENSE",
   "dependencies": {
-    "discord.js": "^14.11.0"
+    "cheerio": "^1.1.2",
+    "discord.js": "^14.11.0",
+    "node-fetch": "^2.7.0"
   }
 }

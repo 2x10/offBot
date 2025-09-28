@@ -1,0 +1,8 @@
+services:
+    app:
+        image: 2x10/offbot
+        container_name: 2x10.offBot
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        restart: unless-stopped  
