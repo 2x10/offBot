@@ -1,18 +1,19 @@
-const { Scrape } = require("2x10-webscraper")
+const { Scrape } = require("2x10-webscraper");
 
-async function ScraperHelper (interaction, context, usrTags, usrAmount)
+async function ScraperHelper (interaction, context, usrAmount)
 {
-    try {
+    try 
+	{
 		await interaction.deferReply();
 
 		const response = await Scrape(context);
 		if (response.code == 200)
 		{
-			var URL = response.content
+			var content = response.content
 			var reply = ""
-			for (var i = 0; i < usrAmount; i++)
+			for (var i = 0; i < content.length; i++)
 			{
-				reply = reply + `[${i+1}](${URL[i]}) `
+				reply = reply + `[${i+1}](${content[i].img}) `
 			}
 			await interaction.editReply(reply);
 		}
@@ -33,7 +34,7 @@ async function ScraperHelper (interaction, context, usrTags, usrAmount)
 		        await interaction.reply("❌ Something went wrong.");
 		    }
 		} 
-		catch (why) {}
+		catch (_) {}
 	}
 }
 

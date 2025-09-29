@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { ScraperContext } = require("2x10-webscraper")
+const { ScraperExample } = require("2x10-webscraper")
 const { ScraperHelper } = require("./../../helperScripts/webScraperHelper.js")
 
 module.exports = 
@@ -27,37 +27,8 @@ module.exports =
 			if (!usrTags) usrTags = ""
 			if (!usrAmount) usrAmount = 1
 			
-			const context = new ScraperContext
-			({
-			    site: "https://rule34.us",
-			    query: "index.php?r=posts/index&q",
-			    tags: usrTags,
-				amount: usrAmount,
-			    posts: 
-			    {
-			        container: ".thumbail-container",
-			        tag: ["a"],
-			        attribute: "href",
-			    },  
-			    post: 
-			    {
-			        container: ".content_push",
-			        tag: ["img", "source"],
-			        attribute: "src",
-			    },
-			    pages: 
-			    {
-			        container: ".pagination",
-			        tag: ["a"],
-			        attribute: "href",
-			        query: {
-			            name: "page",
-			            min: 0,
-			            max: 235,
-			        },
-			    },
-			});
-			
+			const context = new ScraperExample(usrTags, usrAmount).rule34
+
 			ScraperHelper(interaction, context, usrTags, usrAmount)
 		}
 		catch(err)

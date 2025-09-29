@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-CONFIG_FILE="config.json"  
+CONFIG_FILE=".env"  
 EXAMPLE_FILE="${CONFIG_FILE}.example" 
 
 setup_config() {
