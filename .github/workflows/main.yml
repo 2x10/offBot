@@ -21,7 +21,7 @@ jobs:
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H voidence.cc >> ~/.ssh/known_hosts
-        rsync -avz --delete --exclude='config.json' ./ dev@voidence.cc:/home/dev/bots/offbot/
+        rsync -avz --delete --exclude='.env' ./ dev@voidence.cc:/home/dev/bots/offbot/
 
     - name: Run install script
       env:
