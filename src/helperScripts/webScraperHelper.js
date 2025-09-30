@@ -1,4 +1,4 @@
-const { Scrape } = require("2x10-webscraper");
+const { ScrapeFast } = require("2x10-webscraper");
 
 async function ScraperHelper (interaction, context, usrAmount)
 {
@@ -6,7 +6,7 @@ async function ScraperHelper (interaction, context, usrAmount)
 	{
 		await interaction.deferReply();
 
-		const response = await Scrape(context);
+		const response = await ScrapeFast(context);
 		if (response.code == 200)
 		{
 			var content = response.content
