@@ -29,7 +29,7 @@ module.exports =
 			
 			const context = new ScraperExample(usrTags, usrAmount).rule34
 
-			ScraperHelper(interaction, context, usrTags, usrAmount)
+			ScraperHelper(interaction, context)
 		}
 		catch(err)
 		{

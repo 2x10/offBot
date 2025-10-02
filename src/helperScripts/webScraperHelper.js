@@ -1,12 +1,14 @@
 const { ScrapeFast } = require("2x10-webscraper");
 
-async function ScraperHelper (interaction, context, usrAmount)
+async function ScraperHelper (interaction, context)
 {
     try 
 	{
 		await interaction.deferReply();
 
 		const response = await ScrapeFast(context);
+		//const response = await fetch(`http://localhost:3000/scrape?tags=${usrTags}&amount=${usrAmount}`)
+
 		if (response.code == 200)
 		{
 			var content = response.content
