@@ -1,13 +1,13 @@
-const { ScrapeFast } = require("2x10-webscraper");
+import { ScrapeFast, ScraperContext, ScraperSettings } from "2x10-webscraper";
+import { ChatInputCommandInteraction   } from "discord.js";
 
-async function ScraperHelper (interaction, context)
+export async function ScraperHelper (interaction: ChatInputCommandInteraction, context: ScraperContext, settings: ScraperSettings)
 {
     try 
 	{
 		await interaction.deferReply();
 
-		const response = await ScrapeFast(context);
-		//const response = await fetch(`http://localhost:3000/scrape?tags=${usrTags}&amount=${usrAmount}`)
+		const response = await ScrapeFast(context, settings);
 
 		if (response.code == 200)
 		{
@@ -39,5 +39,3 @@ async function ScraperHelper (interaction, context)
 		catch (_) {}
 	}
 }
-
-module.exports = { ScraperHelper };

@@ -1,39 +1,7 @@
-const { ScraperContext, Scrape } = require("./src/helperScripts/webScraper.js")
+import whois from 'whois-json';
 
-const context = new ScraperContext
-({
-    site: "https://e621.net",
-    query: "posts?tags",
-    tags: "animated",
-	amount: 5,
-    posts: 
-    {
-        container: ".posts-container",
-        tag: ["a"],
-        attribute: "href",
-    },  
-    post: 
-    {
-        container: "#image-container",
-        tag: ["img", "video"],
-        attribute: "src",
-    },
-    pages: 
-    {
-        container: ".pagination",
-        tag: ["a"],
-        attribute: "href",
-        query: {
-            name: "page",
-            min: 1,
-            max: 100,
-        },
-    },
-});
+const query = '1.dfgvrsedfgrger1.1.1'
+const result = await whois(query);
 
-async function run()
-{
-    console.log(await Scrape(context))
-}
-
-run();
+console.log(query)
+console.log(result)

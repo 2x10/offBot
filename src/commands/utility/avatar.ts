@@ -1,15 +1,16 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+import { SlashCommandBuilder, EmbedBuilder, ChatInputCommandInteraction } from 'discord.js';
 
-module.exports = {
+export default 
+{
 	data: new SlashCommandBuilder()
 		.setName('avatar')
 		.setDescription('Get the avatar URL of the selected user, or your own avatar.')
 		.addUserOption(option => option.setName('target')
 		.setDescription('The user\'s avatar to show')),
-	async execute(interaction) {
+	async execute(interaction: ChatInputCommandInteraction) {
 		const user = interaction.options.getUser('target');
  
-		message = ""
+		let message = ""
 		var avatar = "";
 		if (user)
 		{

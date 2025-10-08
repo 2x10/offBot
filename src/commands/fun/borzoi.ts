@@ -1,11 +1,11 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+import { SlashCommandBuilder, EmbedBuilder, ChatInputCommandInteraction } from 'discord.js';
 
-module.exports = 
+export default 
 {
 	data: new SlashCommandBuilder()
 		.setName('borzoi')
 		.setDescription('sends funny borzoi picture'),
-	async execute(interaction) {
+	async execute(interaction: ChatInputCommandInteraction) {
     const response = await fetch("https://dog.ceo/api/breed/borzoi/images/random/");
     const data = await response.json();
 
