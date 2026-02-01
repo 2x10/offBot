@@ -22,7 +22,7 @@ export async function ScraperHelper (interaction: ChatInputCommandInteraction, c
 		else if (response.code == 204) {await interaction.editReply(response.message)}
 		else
 		{
-			await interaction.editReply(response.message)
+			await interaction.editReply(response.message) 
 		}
 	}
 	catch(err) 

@@ -12,8 +12,8 @@ export default
             .setMaxValue(100)
             .setRequired(true)
         ),
-        userPermissions: [PermissionFlagsBits.ManageMessages],
-        botPermissions: [PermissionFlagsBits.ManageMessages],
+        userPermissions: [PermissionFlagsBits.ManageMessages, PermissionFlagsBits.Administrator],
+        botPermissions: [PermissionFlagsBits.ManageMessages, PermissionFlagsBits.Administrator],
 
     async execute(interaction: ChatInputCommandInteraction) {
         const amount = interaction.options.getNumber('amount', true);
