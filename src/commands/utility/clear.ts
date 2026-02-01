@@ -4,7 +4,6 @@ export default
     data: new SlashCommandBuilder()
         .setName('clear')
         .setDescription('clears messages between 1 and 100')
-        .setDMPermission(false)
         .addNumberOption(option => 
             option.setName('amount')
             .setDescription('Number of messages to delete')
@@ -12,8 +11,8 @@ export default
             .setMaxValue(100)
             .setRequired(true)
         ),
-        userPermissions: [PermissionFlagsBits.ManageMessages, PermissionFlagsBits.Administrator],
-        botPermissions: [PermissionFlagsBits.ManageMessages, PermissionFlagsBits.Administrator],
+        userPermissions: [PermissionFlagsBits.Administrator],
+        botPermissions: [PermissionFlagsBits.ManageMessages],
 
     async execute(interaction: ChatInputCommandInteraction) {
         const amount = interaction.options.getNumber('amount', true);
