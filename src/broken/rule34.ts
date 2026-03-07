@@ -1,6 +1,6 @@
 import { SlashCommandBuilder, ChatInputCommandInteraction } from 'discord.js';
 import { ScraperExample, ScraperSettings } from "2x10-webscraper"
-import { ScraperHelper } from "./../../helperScripts/webScraperHelper.js"
+import { ScraperHelper } from "../helperScripts/webScraperHelper.js"
 
 export default 
 {

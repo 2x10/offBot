@@ -50,6 +50,6 @@ export default {
 			adapterCreator: channel.guild.voiceAdapterCreator,
 		});
 
-		await interaction.reply(`Joined **${channel.name}** 🎧`);
+		await interaction.reply(`Joined **${channel.name}**`);
 	},
 };
